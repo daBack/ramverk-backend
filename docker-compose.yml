@@ -1,0 +1,56 @@
+version: "3"
+services:
+    node90:
+        image: "node:9.0.0"
+        user: "node"
+        ports:
+            - "8071:3000"
+        working_dir: /home/node/app
+        volumes:
+            - ./:/home/node/app/
+        command: "npm start"
+    node80:
+        image: node:8.0.0
+        ports:
+            - "8070:3000"
+        working_dir: /home/node/app
+        volumes:
+            - ./:/home/node/app/
+        command: "npm start"
+    node70:
+        image: node:7.0.0
+        ports:
+            - "8056:3000"
+        working_dir: /home/node/app
+        volumes:
+            - ./:/home/node/app/
+        command: "npm start"
+
+    # Here comes some for test
+
+    node_7:
+        build:
+            context: .
+            dockerfile: docker/Dockerfile-node-7
+        volumes:
+            - ./:/app/
+        ports:
+            - "3000:3000"
+
+    node_6:
+        build:
+            context: .
+            dockerfile: docker/Dockerfile-node-6
+        volumes:
+            - ./:/app/
+        ports:
+            - "3000:3000"
+
+    node_5:
+        build:
+            context: .
+            dockerfile: docker/Dockerfile-node-5
+        volumes:
+            - ./:/app/
+        ports:
+            - "3000:3000"

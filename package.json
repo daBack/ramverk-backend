@@ -1,0 +1,45 @@
+{
+  "name": "application-name",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js",
+    "test": "nyc --reporter=html --reporter=text mocha 'test/**/*.js'",
+    "eslint": "eslint .",
+    "report-coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "report-codecov": "nyc report --reporter=lcov > coverage.lcov && codecov",
+    "posttest": "npm run eslint"
+  },
+  "dependencies": {
+    "errorhandler": "^1.5.0",
+    "express": "^4.16.1",
+    "express-less": "^0.1.0",
+    "express-react-views": "^0.10.4",
+    "hover.css": "^2.2.1",
+    "less-express": "^1.1.0",
+    "morgan": "^1.9.0",
+    "nyc": "^11.3.0",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reactjs/express-react-views.git"
+  },
+  "devDependencies": {
+    "clean-css-cli": "^4.1.10",
+    "codecov": "^3.0.0",
+    "coveralls": "^3.0.0",
+    "eslint": "^4.11.0",
+    "eslint-plugin-pug": "^1.1.0",
+    "eslint-plugin-react": "^7.5.1",
+    "html-minifier": "^3.5.6",
+    "htmlhint": "^0.9.13",
+    "js-yaml": "^3.10.0",
+    "jsonlint": "^1.6.2",
+    "mocha": "^4.0.1",
+    "stylelint": "^8.2.0",
+    "uglify-es": "^3.1.7"
+  }
+}
